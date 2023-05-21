@@ -1,17 +1,14 @@
 import fastity from 'fastify'
-import { PrismaClient } from '@prisma/client'
+import cors from '@fastify/cors'
+import { memoriesRoutes } from './routes/memories'
 
 const app = fastity()
-const prisma = new PrismaClient()
 
-app.get('/', async () => {
-  const users = await prisma.user.findMany()
-  return users
+app.register(cors, {
+  origin: ['http://localhost:3000'],
 })
 
-app.get('/hello', () => {
-  return 'Hello world'
-})
+app.register(memoriesRoutes)
 
 app
   .listen({
