@@ -2,8 +2,8 @@
   "expo": {
     "name": "mobile",
     "slug": "mobile",
+    "scheme": "nlwspacetime",
     "version": "1.0.0",
-    "schema": "nlwspacetime",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
